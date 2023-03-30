@@ -26,7 +26,8 @@ namespace RGU_Sem_4_Lr2_Form
                 maximStore.Name = textBox3.Text;
                 maximStore.TvCost = Convert.ToInt32(textBox2.Text);
                 maximStore.AllSell = Convert.ToInt32(textBox1.Text);
-                label2.Text = "Сумма общих продаж = " + Convert.ToString(maximStore.AllCost());
+                //label2.Text = "Сумма общих продаж = " + Convert.ToString(maximStore.AllCost());
+                MessageBox.Show("Название магазина - " + maximStore.Name + "\nСумма общих продаж = " + Convert.ToString(maximStore.AllCost()) + "\nКоличество продаж = " + Convert.ToString(maximStore.TvCost), "Результат");
             }
             catch
             {
@@ -39,13 +40,13 @@ namespace RGU_Sem_4_Lr2_Form
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8  && number != ',') // цифры и клавиша BackSpace
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
             {
                 e.Handled = true;
             }
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox2_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
             if (!Char.IsDigit(number) && number != 8 && number != ',') // цифры и клавиша BackSpace
