@@ -23,8 +23,8 @@ namespace RGU_Sem_4_Lr2_Form
             {
                 TvStore maximStore = new TvStore();
 
-                maximStore.Name = "Maxim Store";
-                maximStore.TvCost = 10000;
+                maximStore.Name = textBox3.Text;
+                maximStore.TvCost = Convert.ToInt32(textBox2.Text);
                 maximStore.AllSell = Convert.ToInt32(textBox1.Text);
                 label2.Text = "Сумма общих продаж = " + Convert.ToString(maximStore.AllCost());
             }
@@ -40,6 +40,15 @@ namespace RGU_Sem_4_Lr2_Form
         {
             char number = e.KeyChar;
             if (!Char.IsDigit(number) && number != 8  && number != ',') // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8 && number != ',') // цифры и клавиша BackSpace
             {
                 e.Handled = true;
             }
