@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RGU_Sem_4_Lr2_Form
 {
@@ -24,7 +25,7 @@ namespace RGU_Sem_4_Lr2_Form
                 TvStore maximStore = new TvStore();
 
                 maximStore.Name = textBox3.Text;
-                maximStore.TvCost = Convert.ToInt32(textBox2.Text);
+                maximStore.TvCost = Convert.ToDouble(textBox2.Text);
                 maximStore.AllSell = Convert.ToInt32(textBox1.Text);
                 //label2.Text = "Сумма общих продаж = " + Convert.ToString(maximStore.AllCost());
                 MessageBox.Show("Название магазина - " + maximStore.Name + "\nСумма общих продаж = " + Convert.ToString(maximStore.AllCost()) + "\nКоличество продаж = " + Convert.ToString(maximStore.TvCost), "Результат");
@@ -53,6 +54,15 @@ namespace RGU_Sem_4_Lr2_Form
             {
                 e.Handled = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+           // textBox4.Clear();
+           // textBox5.Clear();
         }
     }
 
